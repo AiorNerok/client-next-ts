@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { CSSProperties } from "react";
 import Link from "next/link";
 import { Button, Link as LinkNextUI } from "@nextui-org/react";
 import { useRouter } from "next/router";
@@ -8,32 +8,44 @@ type TLink = {
   href: string;
   text?: string;
   children?: React.ReactNode;
-  css?: string
+  css?: string;
+  type: "link" | "wrapper";
 };
 
-export default function LinkNext({ href, text, children, css }: TLink): JSX.Element {
-  const Router = useRouter();
+interface IStyle {
+  padding?: CSSProperties;
+  color?: CSSProperties;
+  fontWeight?: CSSProperties;
+}
 
-  const StyleActiveLink = {
-    fontWeight: "600",
-    color: `$primary`,
-  };
+export default function LinkNext({
+  href,
+  text,
+  children,
+  css,
+  type,
+}: TLink): JSX.Element {
 
-  const StyleLink = {
-    fontWeight: "400",
-    color: `#687076`,
-  };
+  function Style() {
+    if (type === "link") {
+      const { asPath } = useRouter();
 
-  const activeStyle = Router.asPath === href ? StyleActiveLink : StyleLink;
+      return {
+        padding: "$4 $6",
+        color: asPath === href ? "$primary" : "#687076",
+        fontWeight: asPath === href ? "600" : "400",
+      };
+    } else if (type === "wrapper") {
+      return {
+        widht: '100%'
+      };
+    }
+  }
 
   return (
     <Link href={href}>
       <LinkNextUI
-        css={{
-          ...activeStyle,
-          padding: "$4 $6",
-          css
-        }}
+        css={{...Style()}}
       >
         {text}
         {children}
