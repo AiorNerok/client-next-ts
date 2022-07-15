@@ -11,7 +11,7 @@ export default function HamburgerMenu({ links }: any) {
       <Dropdown.Menu css={{}} aria-label="menu">
         {links.map((link: any) => (
           <Dropdown.Item key={link.key}>
-            <LinkNext href={link.href} text={link.text} />
+            <LinkNext href={link.href} type='link' text={link.text} />
           </Dropdown.Item>
         ))}
       </Dropdown.Menu>
