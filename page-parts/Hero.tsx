@@ -15,7 +15,8 @@ export default function Hero() {
       <Container
         display="flex"
         css={{
-          height: '100%'
+          minHeight: '560px'
+          
         }}
       >
         <Row css={{
