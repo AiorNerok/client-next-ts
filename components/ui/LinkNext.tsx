@@ -1,4 +1,7 @@
 import React, { CSSProperties } from "react";
+
+import CSS from "csstype";
+
 import Link from "next/link";
 import { Button, Link as LinkNextUI } from "@nextui-org/react";
 import { useRouter } from "next/router";
@@ -8,28 +11,25 @@ type TLink = {
   href: string;
   text?: string;
   children?: React.ReactNode;
-  css?: string;
   type: "link" | "wrapper";
 };
 
 interface IStyle {
-  padding?: CSSProperties;
-  color?: CSSProperties;
-  fontWeight?: CSSProperties;
+  padding?: string;
+  color?: string;
+  fontWeight?: string;
+  width?: number | string;
 }
 
 export default function LinkNext({
   href,
   text,
   children,
-  css,
   type,
 }: TLink): JSX.Element {
-
-  function Style() {
+  function Style(): IStyle | "" {
     if (type === "link") {
       const { asPath } = useRouter();
-
       return {
         padding: "$4 $6",
         color: asPath === href ? "$primary" : "#687076",
@@ -37,16 +37,16 @@ export default function LinkNext({
       };
     } else if (type === "wrapper") {
       return {
-        widht: '100%'
+        width: "100%",
+        padding: "0",
       };
+    } else {
+      return "";
     }
   }
-
   return (
     <Link href={href}>
-      <LinkNextUI
-        css={{...Style()}}
-      >
+      <LinkNextUI css={{ ...Style() }}>
         {text}
         {children}
       </LinkNextUI>

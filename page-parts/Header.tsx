@@ -41,7 +41,7 @@ export default function Header() {
       >
         <Container css={{}}>
           {links.map(({ href, key, text }) => (
-            <LinkNext href={href} text={text} key={key} />
+            <LinkNext type="link" href={href} text={text} key={key} />
           ))}
         </Container>
       </Row>
@@ -54,7 +54,7 @@ export default function Header() {
         }}
       >
         <Container display="flex" justify="space-between" alignItems="center">
-          <LinkNext href="/" css="padding:0px">
+          <LinkNext type="link" href="/">
             <Image
               src="https://github.com/nextui-org/nextui/blob/next/apps/docs/public/nextui-banner.jpeg?raw=true"
               objectFit="contain"
@@ -84,7 +84,7 @@ export default function Header() {
               </Modal.Header>
               <Modal.Body>
                 {links.map(({ href, key, text }) => (
-                  <LinkNext href={href} text={text} key={key} />
+                  <LinkNext type="link" href={href} text={text} key={key} />
                 ))}
               </Modal.Body>
             </Modal>

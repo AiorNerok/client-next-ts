@@ -1,24 +1,30 @@
 import {
   Button,
   Card,
-  Col,
   Container,
   Grid,
   Row,
   Spacer,
   Text,
 } from "@nextui-org/react";
+
 import { LinkNext } from "../components/ui";
 
-const MockItem = ({ text }:any) => {
+const MockItem = ({ text }: any) => {
   return (
-    <Card css={{ h: "$24", $$cardColor: "$colors$primary" }}>
-      <Card.Body>
-        <Text h6 size={15} color="white" css={{ mt: 0 }}>
-          {text}
-        </Text>
-      </Card.Body>
-    </Card>
+    <LinkNext type="wrapper" href="/about">
+      <Card css={{ h: "$24", w: "100%", minHeight: '360px' }}  isHoverable>
+        <Card.Body css={{ p: "0" }}>
+          <Card.Image
+            src="https://nextui.org/images/card-example-6.jpeg"
+            width="100%"
+            height="100%"
+            objectFit="cover"
+            alt="Card example background"
+          />
+        </Card.Body>
+      </Card>
+    </LinkNext>
   );
 };
 
@@ -36,32 +42,26 @@ export default function Gallary() {
           css={{
             display: "flex",
             alignItems: "center",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
           }}
         >
-          <Col span={12} css={{ padding: 0 }}>
-            <Text
-              h3
-              size={60}
-              css={{
-                textGradient: "45deg, $blue600 -20%, $pink600 50%",
-              }}
-              weight="bold"
-            >
-              Продукция
-            </Text>
-          </Col>
-          <Col
+          <Text
+            h3
+            size={60}
             css={{
-              textAlign: "end",
+              textGradient: "45deg, $blue600 -20%, $pink600 50%",
+              flex: "1",
             }}
+            weight="bold"
           >
-            <LinkNext href="/">
-              <Button shadow>Посмотреть еще</Button>
-            </LinkNext>
-          </Col>
+            Продукция
+          </Text>
+          <LinkNext type="link" href="/">
+            <Button shadow>Посмотреть еще</Button>
+          </LinkNext>
         </Row>
         <Spacer y={1} />
-
         <Row>
           <Grid.Container wrap="wrap" gap={2} justify="center">
             <Grid xs={12} sm={4}>
