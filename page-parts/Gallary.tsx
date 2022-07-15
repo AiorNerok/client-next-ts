@@ -47,7 +47,6 @@ export default function Gallary() {
             <Button
               shadow
               ripple
-              css={{ "@hover": { transform: "translateY(-3px)" } }}
             >
               Посмотреть еще
             </Button>
