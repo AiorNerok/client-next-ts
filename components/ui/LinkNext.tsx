@@ -6,10 +6,12 @@ import { type } from "os";
 
 type TLink = {
   href: string;
-  text: string;
-}
+  text?: string;
+  children?: React.ReactNode;
+  css?: string
+};
 
-export default function LinkNext({ href, text }: TLink): JSX.Element {
+export default function LinkNext({ href, text, children, css }: TLink): JSX.Element {
   const Router = useRouter();
 
   const StyleActiveLink = {
@@ -30,9 +32,11 @@ export default function LinkNext({ href, text }: TLink): JSX.Element {
         css={{
           ...activeStyle,
           padding: "$4 $6",
+          css
         }}
       >
         {text}
+        {children}
       </LinkNextUI>
     </Link>
   );
