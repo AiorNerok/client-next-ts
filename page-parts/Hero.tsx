@@ -9,7 +9,8 @@ export default function Hero() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         maxHeight: '560px',
-        height: '100%'
+        height: '100%',
+        width: '100%'
       }}
     >
       <Container
