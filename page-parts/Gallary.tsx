@@ -10,93 +10,19 @@ import {
 } from "@nextui-org/react";
 
 import { LinkNext } from "../components/ui";
-
-const MockItem = ({ text }: any) => {
-  return (
-    <LinkNext type="wrapper" href="/about">
-      <Card
-        css={{
-          h: "$24",
-          w: "100%",
-          minHeight: "360px",
-          "@hover": {
-            shadow: "0 4px 14px 0 var(--nextui-colors-primaryShadow)",
-          },
-        }}
-        variant="flat"
-      >
-        <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
-          <Col>
-            <Text
-              size={12}
-              weight="bold"
-              transform="uppercase"
-              color="#ffffffAA"
-            >
-              New
-            </Text>
-            <Text h3 color="black">
-              Acme camera
-            </Text>
-          </Col>
-        </Card.Header>
-        <Card.Body css={{ p: "0" }}>
-          <Card.Image
-            src="https://nextui.org/images/card-example-6.jpeg"
-            width="100%"
-            height="100%"
-            objectFit="cover"
-            alt="Card example background"
-          />
-        </Card.Body>
-        <Card.Footer
-          isBlurred
-          css={{
-            position: "absolute",
-            bgBlur: "#ffffff66",
-            borderTop: "$borderWeights$light solid rgba(255, 255, 255, 0.2)",
-            bottom: 0,
-            zIndex: 1,
-          }}
-        >
-          <Row>
-            <Col>
-              <Text color="#000" size={12}>
-                Available soon.
-              </Text>
-              <Text color="#000" size={12}>
-                Get notified.
-              </Text>
-            </Col>
-            <Col>
-              <Row justify="flex-end">
-                <Button shadow auto rounded >
-                  <Text
-                    size={12}
-                    weight="bold"
-                    transform="uppercase"
-                  >
-                    Подробнее
-                  </Text>
-                </Button>
-              </Row>
-            </Col>
-          </Row>
-        </Card.Footer>
-      </Card>
-    </LinkNext>
-  );
-};
+import MockItemCardProdict from "../components/ui/MockItemCardProdict";
 
 export default function Gallary() {
   return (
     <Row
       css={{
         flexDirection: "column",
+        w: '100%'
       }}
+
     >
       <Spacer y={4} />
-      <Container fluid>
+      <Container>
         <Row
           gap={2}
           css={{
@@ -129,24 +55,24 @@ export default function Gallary() {
         </Row>
         <Spacer y={1} />
         <Row>
-          <Grid.Container wrap="wrap" gap={2} justify="center">
+          <Grid.Container wrap="wrap" gap={1} justify="center">
             <Grid xs={12} sm={4}>
-              <MockItem text="1 of 3" />
+              <MockItemCardProdict text="1 of 3" />
             </Grid>
             <Grid xs={12} sm={5}>
-              <MockItem text="2 of 3" />
+              <MockItemCardProdict text="2 of 3" />
             </Grid>
             <Grid xs={12} sm={3}>
-              <MockItem text="2 of 3" />
+              <MockItemCardProdict text="2 of 3" />
             </Grid>
             <Grid xs={12} sm={5}>
-              <MockItem text="2 of 3" />
+              <MockItemCardProdict text="2 of 3" />
             </Grid>
             <Grid xs={12} sm={3}>
-              <MockItem text="2 of 3" />
+              <MockItemCardProdict text="2 of 3" />
             </Grid>
             <Grid xs={12} sm={4}>
-              <MockItem text="3 of 3" />
+              <MockItemCardProdict text="3 of 3" />
             </Grid>
           </Grid.Container>
         </Row>
