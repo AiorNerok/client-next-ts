@@ -1,7 +1,8 @@
 import { Collapse, Container, Row, Spacer, Text } from "@nextui-org/react";
 import React from "react";
 
-interface IFAQList<S = string> {
+interface IFAQList<S = string, N = number> {
+  id: N;
   title: S;
   desc: S;
   subtitle?: S;
@@ -9,14 +10,17 @@ interface IFAQList<S = string> {
 
 const FAQList: IFAQList[] = [
   {
+    id: 1,
     title: "option a",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat.",
   },
   {
+    id: 2,
     title: "option b",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat.",
   },
   {
+    id: 3,
     title: "option z",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat.",
   },
@@ -45,8 +49,8 @@ export default function FAQ() {
           Частые вопросы
         </Text>
         <Collapse.Group splitted>
-          {FAQList.map(({ title, desc }: IFAQList) => (
-            <Collapse title={title}>
+          {FAQList.map(({ id, title, desc }: IFAQList) => (
+            <Collapse key={id} title={title}>
               <Text>{desc}</Text>
             </Collapse>
           ))}

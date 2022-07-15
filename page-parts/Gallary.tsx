@@ -17,9 +17,8 @@ export default function Gallary() {
     <Row
       css={{
         flexDirection: "column",
-        w: '100%'
+        w: "100%",
       }}
-
     >
       <Spacer y={4} />
       <Container>
@@ -30,6 +29,7 @@ export default function Gallary() {
             alignItems: "center",
             justifyContent: "space-between",
             flexWrap: "wrap",
+            m:0
           }}
         >
           <Text
@@ -38,16 +38,14 @@ export default function Gallary() {
             css={{
               textGradient: "45deg, $blue600 -20%, $pink600 50%",
               flex: "1",
+              m: 0,
             }}
             weight="bold"
           >
             Продукция
           </Text>
           <LinkNext type="link" href="/">
-            <Button
-              shadow
-              ripple
-            >
+            <Button shadow ripple>
               Посмотреть еще
             </Button>
           </LinkNext>
