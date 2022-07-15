@@ -30,6 +30,7 @@ export default function Layout({ children }: Props) {
         transition={{ duration: 0.3 }}
         style={{
           flex: "1",
+          width: "100%",
         }}
       >
         {children}
