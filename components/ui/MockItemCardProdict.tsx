@@ -9,11 +9,11 @@ export default function MockItemCardProdict({text}:any) {
               h: "$24",
               w: "100%",
               minHeight: "360px",
-              "@hover": {
-                shadow: "0 4px 14px 0 var(--nextui-colors-primaryShadow)",
-              },
+              // "@hover": {
+              //   shadow: "0 4px 14px 0 var(--nextui-colors-primaryShadow)",
+              // },
             }}
-            variant="flat"
+            // variant="flat"
           >
             <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
               <Col>

@@ -1,11 +1,10 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, useEffect, useRef } from "react";
 
 import CSS from "csstype";
 
 import Link from "next/link";
 import { Button, Link as LinkNextUI } from "@nextui-org/react";
 import { useRouter } from "next/router";
-import { type } from "os";
 
 type TLink = {
   href: string;
@@ -19,6 +18,7 @@ interface IStyle {
   color?: string;
   fontWeight?: string;
   width?: number | string;
+  "@hover"?: { opacity: 1 };
 }
 
 export default function LinkNext({
@@ -38,15 +38,22 @@ export default function LinkNext({
     } else if (type === "wrapper") {
       return {
         width: "100%",
-        padding: "0",
+        "@hover": { opacity: 1 },
       };
     } else {
       return "";
     }
   }
+
+  const test = useRef(null);
+  useEffect(() => {
+    // hello my first KOSTIL`
+    // @ts-ignore
+    test.current.classList.remove("nextui-c-gUrcXm");
+  }, []);
   return (
     <Link href={href}>
-      <LinkNextUI css={{ ...Style() }}>
+      <LinkNextUI ref={test} css={{ ...Style() }}>
         {text}
         {children}
       </LinkNextUI>
