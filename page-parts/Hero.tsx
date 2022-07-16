@@ -2,7 +2,7 @@ import { Col, Container, Image, Row, Text } from "@nextui-org/react";
 
 export default function Hero() {
   return (
-    <Row
+    <Row as="main"
       css={{
         background:
           "url(https://www.pixel4k.com/wp-content/uploads/2020/01/alien-moon-nature_1580055622.jpg)",

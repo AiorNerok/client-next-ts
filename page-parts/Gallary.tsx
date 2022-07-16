@@ -1,7 +1,5 @@
 import {
   Button,
-  Card,
-  Col,
   Container,
   Grid,
   Row,
@@ -10,11 +8,15 @@ import {
 } from "@nextui-org/react";
 
 import { LinkNext } from "../components/ui";
+
+
+
 import MockItemCardProdict from "../components/ui/MockItemCardProdict";
 
-export default function Gallary() {
+export default function Gallary(): JSX.Element {
   return (
     <Row
+      as='section'
       css={{
         flexDirection: "column",
         w: "100%",
@@ -29,7 +31,7 @@ export default function Gallary() {
             alignItems: "center",
             justifyContent: "space-between",
             flexWrap: "wrap",
-            m:0
+            m: 0
           }}
         >
           <Text
@@ -45,14 +47,14 @@ export default function Gallary() {
             Продукция
           </Text>
           <LinkNext type="link" href="/">
-            <Button shadow ripple>
+            <Button shadow ripple className='button_up'>
               Посмотреть еще
             </Button>
           </LinkNext>
         </Row>
         <Spacer y={1} />
         <Row>
-          <Grid.Container wrap="wrap" gap={1} justify="center">
+          <Grid.Container wrap="wrap" gap={1} justify="center" >
             <Grid xs={12} sm={4}>
               <MockItemCardProdict text="1 of 3" />
             </Grid>
@@ -62,10 +64,10 @@ export default function Gallary() {
             <Grid xs={12} sm={3}>
               <MockItemCardProdict text="2 of 3" />
             </Grid>
-            <Grid xs={12} sm={5}>
+            <Grid xs={12} sm={4}>
               <MockItemCardProdict text="2 of 3" />
             </Grid>
-            <Grid xs={12} sm={3}>
+            <Grid xs={12} sm={4}>
               <MockItemCardProdict text="2 of 3" />
             </Grid>
             <Grid xs={12} sm={4}>
