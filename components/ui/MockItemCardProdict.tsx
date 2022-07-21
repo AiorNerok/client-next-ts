@@ -54,20 +54,7 @@ export default function MockItemCardProdict({ text }: any) {
                 Get notified.
               </Text>
             </Col>
-            <Col>
-              <Row justify="flex-end">
-                <Button
-                  shadow
-                  auto
-                  ripple
-                  onMouseEnter={() => console.log("enter")}
-                  onMouseLeave={() => console.log("Leave")}
-                  className="button_up"
-                >
-                  Подробнее
-                </Button>
-              </Row>
-            </Col>
+           
           </Row>
         </Card.Footer>
       </Card>
