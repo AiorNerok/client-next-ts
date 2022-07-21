@@ -15,8 +15,9 @@ export default function LinkNext({
 
   function Style(): ILinkStyle | "" {
     if (type === "link") {
-      const isPath = useRouter().asPath === href
 
+      const isPath = useRouter().asPath.startsWith(href)
+      console.log(useRouter())
       return {
         padding: "$4 $6",
         color: isPath ? "$primary" : "#687076",

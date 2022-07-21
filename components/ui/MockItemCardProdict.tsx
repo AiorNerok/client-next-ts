@@ -1,9 +1,9 @@
 import { Button, Card, Col, Row, Text } from "@nextui-org/react";
 import LinkNext from "./LinkNext";
 
-export default function MockItemCardProdict({ text }: any) {
+export default function MockItemCardProdict({ text, href }: any) {
   return (
-    <LinkNext type="wrapper" href="/about">
+    <LinkNext type="wrapper" href={href}>
       <Card
         css={{
           h: "$24",
@@ -54,7 +54,6 @@ export default function MockItemCardProdict({ text }: any) {
                 Get notified.
               </Text>
             </Col>
-           
           </Row>
         </Card.Footer>
       </Card>

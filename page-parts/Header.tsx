@@ -19,6 +19,11 @@ export default function Header() {
       key: "main",
     },
     {
+      href: "/product",
+      text: "Производство",
+      key: "product",
+    },
+    {
       href: "/contact",
       text: "Контакты",
       key: "contact",
@@ -61,33 +66,34 @@ export default function Header() {
               alt="Default Image"
               height={40}
               width={80}
-              className='noneclass'
+              className="noneclass"
             />
           </LinkNext>
-            <Button auto shadow onClick={() => setVisible(true)}>
-              Меню
-            </Button>
-            <Modal
-              scroll
-              width="90%"
-              css={{
-                height: "100%",
-              }}
-              aria-labelledby="modal-title"
-              aria-describedby="modal-description"
-              {...bindings}
-            >
-              <Modal.Header>
-                <Text id="modal-title" size={18}>
-                  Меню
-                </Text>
-              </Modal.Header>
-              <Modal.Body>
-                {links.map(({ href, key, text }) => (
-                  <LinkNext type="link" href={href} text={text} key={key} />
-                ))}
-              </Modal.Body>
-            </Modal>
+          <Button auto shadow onClick={() => setVisible(true)}>
+            Меню
+          </Button>
+          <Modal
+            blur
+            scroll
+            width="90%"
+            css={{
+              height: "100%",
+            }}
+            aria-labelledby="modal-title"
+            aria-describedby="modal-description"
+            {...bindings}
+          >
+            <Modal.Header>
+              <Text id="modal-title" size={18}>
+                Меню
+              </Text>
+            </Modal.Header>
+            <Modal.Body>
+              {links.map(({ href, key, text }) => (
+                <LinkNext type="link" href={href} text={text} key={key} />
+              ))}
+            </Modal.Body>
+          </Modal>
         </Container>
       </Row>
     </>
